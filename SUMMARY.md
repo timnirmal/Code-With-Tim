@@ -5,7 +5,8 @@
 ## Git <a id="git-1"></a>
 
 * [Git](git-1/git.md)
-* [GitHub](git-1/github.md)
+* [GitHub](git-1/github/README.md)
+  * [Learn GitHub](git-1/github/learn-github.md)
 
 ## Languages
 
