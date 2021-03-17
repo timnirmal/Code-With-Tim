@@ -31,3 +31,8 @@
   * [React R](web-frameworks/react/react-r.md)
 * [Node](web-frameworks/node.md)
 
+## Azure
+
+* [Introduction](azure/introduction.md)
+* [Azure Fundamental Concepts](azure/azure-fundamental-concepts.md)
+
