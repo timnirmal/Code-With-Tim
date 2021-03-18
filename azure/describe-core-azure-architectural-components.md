@@ -260,3 +260,161 @@ Here are the learning paths in this series:
 * [Azure Fundamentals part 5: Describe identity, governance, privacy, and compliance features](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-identity-governance-privacy-compliance-features/)
 * [Azure Fundamentals part 6: Describe Azure cost management and service level agreements](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-azure-cost-management-service-level-agreements/)
 
+
+
+
+
+## Exercise - Create a website hosted in Azure
+
+* 7 minutes
+
+This module requires a sandbox to complete. You have used 1 of 10 sandboxes for today. More sandboxes will be available tomorrow.
+
+Activate sandbox
+
+As a developer for Tailwind Traders, you likely have expertise creating applications. As you migrate to Azure, many of the steps that you'll follow to set up a website in the cloud will parallel the steps that you followed when you created websites in your company's datacenter. For example, you need to choose where you'll create your website, and then allocate the necessary resources. In Azure, the physical hardware is managed for you, so your tasks are to choose where your website will be located and which resources to provide.
+
+In this exercise, you'll create an Azure App Service instance to host a WordPress website.
+
+### Azure terminology and concepts <a id="azure-terminology-and-concepts"></a>
+
+Before you get started, let's review and discuss some basic terms and concepts that you'll need to know when you create your website.
+
+#### What is App Service? <a id="what-is-app-service"></a>
+
+App Service is an HTTP-based service that enables you to build and host many types of web-based solutions without managing infrastructure. For example, you can host web apps, mobile back ends, and RESTful APIs in several supported programming languages. Applications developed in .NET, .NET Core, Java, Ruby, Node.js, PHP, or Python can run in and scale with ease on both Windows- and Linux-based environments.
+
+For this exercise, we want to create a website in less than the time it takes to eat lunch. So, we're not going to write any code. Instead, you'll deploy a predefined application from Azure Marketplace.
+
+#### What is Azure Marketplace? <a id="what-is-azure-marketplace"></a>
+
+Azure Marketplace is an online store that hosts applications that are certified and optimized to run in Azure. Many types of applications are available, ranging from AI and machine learning to web applications. As you'll see in a couple of minutes, deployments from the store are done via the Azure portal by using a wizard-style user interface. This user interface makes evaluating different solutions easy.
+
+We're going to use one of the WordPress application options from Azure Marketplace for our website.
+
+#### Create resources in Azure <a id="create-resources-in-azure"></a>
+
+Typically, the first thing we'd do is to create a _resource group_ to hold all the things that we need to create. The resource group allows us to administer all the services, disks, network interfaces, and other elements that potentially make up our solution as a unit. We can use the Azure portal to create and manage our solution's resource groups. Keep in mind that you can also manage resources via a command line by using the Azure CLI. The Azure CLI is a useful option if you need to automate the process in the future.
+
+In the free Azure sandbox environment, you'll use the pre-created resource group **\[sandbox resource group name\]**, and you don't need to do this step.
+
+#### Choose a location <a id="choose-a-location"></a>
+
+The free sandbox allows you to create resources in a subset of the Azure global regions. Select a region from this list when you create resources:
+
+* westus2
+* southcentralus
+* centralus
+* eastus
+* westeurope
+* southeastasia
+* japaneast
+* brazilsouth
+* australiasoutheast
+* centralindia
+
+### Create a WordPress website <a id="create-a-wordpress-website"></a>
+
+1. If you haven't done so already, verify that you've activated the sandbox.
+
+   Activating the sandbox allocates the subscription and resource group you'll use in this exercise. This step is required for any Microsoft Learn exercises that use a sandbox.
+
+2. Sign in to the [Azure portal](https://portal.azure.com/learn.docs.microsoft.com) by using the same account you used to activate the sandbox.
+3. On the top left of the Azure portal panel, select **Create a resource**.
+
+   [![Screenshot of the Azure portal showing the left pane with Create a resource option highlighted.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/create-resource.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/create-resource-expanded.png#lightbox)
+
+   This option takes you to **Azure Marketplace**.
+
+   [![Screenshot of the Azure portal showing Azure Marketplace categories in a left column and popular options in a right column.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/azure-marketplace.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/azure-marketplace-expanded.png#lightbox)
+
+4. Azure Marketplace has many services, solutions, and resources available for you to use. We know that we want to install WordPress, so we can do a quick search for it. In the **Search the Marketplace** box with the listed application options, enter **WordPress**. Select the default **WordPress** option from the list of options available.
+
+   [![Screenshot of the Azure portal showing search results for the term WordPress with the WordPress option highlighted.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/search-select-wordpress.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/search-select-wordpress-expanded.png#lightbox)
+
+5. In the panel that appears, you'll typically find more information about the item you're about to install, such as the publisher, a brief description of the resource, and links to more information. Make sure to review this information. Select **Create** to begin the process to create a WordPress app. The **WordPress/Create** panel appears.
+
+   [![Screenshot of the Azure portal showing WordPress resource type summary.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/create-site.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/create-site-expanded.png#lightbox)
+
+6. Several options appear to configure your deployment. Enter the following values for each setting.
+
+   | TABLE 1 |  |
+   | :--- | :--- |
+   | Setting | Value |
+   | App name | Choose a unique value for the app name. It will form part of a fully qualified domain name \(FQDN\). |
+   | Subscription | Make sure **Concierge Subscription** is selected. |
+   | Resource Group | Select the **Use existing** option, and then select the **\[sandbox resource group name\]** resource group from the dropdown. |
+   | Database Provider | From the dropdown, select **MySQL in App**. |
+   | App Service plan/Location | You'll change the App Service plan in the next step. |
+   | Application Insights | Leave at the default configuration. |
+
+   Your configuration should look like this example.
+
+   ![Screenshot of the Azure portal showing the new WordPress app service configured as instructed.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/config-info-create.png)
+
+    Note
+
+   If you still see a section called **Database**, make sure you selected the correct **Database Provider** described in the preceding configuration.
+
+7. Now let's configure the App Service plan to use a specific pricing tier. The App Service plan specifies the compute resources and location for the web app. Select **App Service plan/Location**. The **App Service plan** panel appears.
+
+   ![Screenshot of the Azure portal showing WordPress App Service creation with App Service plan/Location button highlighted.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/config-app-service-plan.png)
+
+8. Select **Create new**. The **New App Service Plan** panel appears.
+
+   [![Screenshot of the Azure portal showing the App Service plan pane with the Create new button highlighted.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/new-app-service-plan.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/new-app-service-plan-expanded.png#lightbox)
+
+9. Enter the following values for each setting.
+
+   | TABLE 2 |  |
+   | :--- | :--- |
+   | Setting | Value |
+   | App Service plan | Choose a unique name for the new app service plan. |
+   | Location | Select **Central US** to make sure we choose a region that allows the service plan you'll choose. Normally, you'll select the region that's closest to your customers while offering the services you need. |
+   | Pricing tier | Select this option to see the performance and feature options of the various types of app service plans. The **Spec Picker** panel appears. |
+
+   [![Screenshot of the Azure portal showing New App Service plan configuration with the Pricing tier button highlighted.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/new-service-plan-config.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/new-service-plan-config-expanded.png#lightbox)
+
+10. The **Spec Picker** enables us to select a new pricing tier for our application. The panel opens to the **Production** tab, with the S1 pricing tier selected. Select a new pricing tier from the **Dev / Test** tab for our website.
+11. Select the **Dev / Test** tab, then select the **F1** pricing tier, and then select **Apply**.
+
+    [![Screenshot of the Azure portal showing the App Service plan Spec Picker pane with the Dev / Test section selected and the free F1 tier and the Apply button highlighted.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/select-pricing-tier.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/select-pricing-tier-expanded.png#lightbox)
+
+12. Back on the **New App Service Plan** pane, select **OK** to create the new plan.
+13. Finally, select **Create** to start the deployment of your new site.
+
+     Note
+
+    If you encounter an issue when you create the resources, verify you've selected the **F1** pricing tier in the new App Service plan. Using the F1 pricing tier is a requirement of the sandbox system when you create this WordPress site.
+
+### Verify your website is running <a id="verify-your-website-is-running"></a>
+
+The deployment of the new website can take a few minutes to complete. You're welcome to explore the portal further on your own.
+
+We can track the progress of the deployment at any time.
+
+1. Select the **Notifications** bell icon at the top of the portal. If your browser window width is smaller, it might be shown when you select the ellipsis \(**...**\) icon in the upper-right corner.
+
+   [![Screenshot of the Azure portal showing the top-right menu with the Notifications bell button highlighted.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/notification-bell.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/notification-bell-expanded.png#lightbox)
+
+2. Select **Deployment in progress** to see the details about all the resources that are created.
+
+   [![Screenshot of the Azure portal showing deployment notification in the Notifications list.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/notification-bell-info.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/notification-bell-info-expanded.png#lightbox)
+
+   Notice how resources are listed as they're created and the status changes to a green check mark as each component in the deployment completes.
+
+   [![Screenshot of the Azure portal showing details of the deployment notification stating, &quot;Your deployment is underway.&quot;](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/deployment-progress.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/deployment-progress-expanded.png#lightbox)
+
+3. After the deployment status message changes to **Your deployment is complete**, you'll notice the status in the **Notifications** dialog box changes to **Deployment succeeded**. Select **Go to resource** to go to the App Service overview.
+
+   [![Screenshot of the Azure portal showing deployment notification stating, &quot;Deployment succeeded.&quot;](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/deployment-complete.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/deployment-complete-expanded.png#lightbox)
+
+4. Find the **URL** in the **Overview** section.
+
+   [![Screenshot of the Azure portal showing App Service Overview pane with URL location highlighted.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/website-url.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/website-url-expanded.png#lightbox)
+
+5. Copy the **URL** information by selecting the **Copy to clipboard** icon at the end of URL.
+6. Open a new tab in your browser, paste this URL, and press Enter to browse to your new WordPress site. You can now configure your WordPress site, and add content.
+
+   ![Screenshot showing preconfigured WordPress website waiting on language/location selection.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/configure-wordpress.png)
+
