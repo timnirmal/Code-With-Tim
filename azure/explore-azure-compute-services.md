@@ -1,2 +1,0 @@
-# Explore Azure compute services
-
