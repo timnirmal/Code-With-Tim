@@ -223,3 +223,5 @@ Additional advantages of region pairs:
 
 Having a broadly distributed set of datacenters allows Azure to provide a high guarantee of availability.
 
+
+
