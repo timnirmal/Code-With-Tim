@@ -90,3 +90,136 @@ Another scenario where you would use management groups is to provide user access
 
 
 
+## Azure resources and Azure Resource Manager
+
+* 4 minutes
+
+After you've created a subscription for Tailwind Traders, you're ready to start creating resources and storing them in resource groups. With that in mind, it's important to define those terms:
+
+* **Resource**: A manageable item that's available through Azure. Virtual machines \(VMs\), storage accounts, web apps, databases, and virtual networks are examples of resources.
+* **Resource group**: A container that holds related resources for an Azure solution. The resource group includes resources that you want to manage as a group. You decide which resources belong in a resource group based on what makes the most sense for your organization.
+
+### Azure resource groups <a id="azure-resource-groups"></a>
+
+Resource groups are a fundamental element of the Azure platform. A resource group is a logical container for resources deployed on Azure. These resources are anything you create in an Azure subscription like VMs, Azure Application Gateway instances, and Azure Cosmos DB instances. All resources must be in a resource group, and a resource can only be a member of a single resource group. Many resources can be moved between resource groups with some services having specific limitations or requirements to move. Resource groups can't be nested. Before any resource can be provisioned, you need a resource group for it to be placed in.
+
+#### Logical grouping <a id="logical-grouping"></a>
+
+Resource groups exist to help manage and organize your Azure resources. By placing resources of similar usage, type, or location in a resource group, you can provide order and organization to resources you create in Azure. Logical grouping is the aspect that you're most interested in here, because there's a lot of disorder among our resources.
+
+![Conceptual image showing a resource group box with a function, VM, database, and app included.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/resource-group.png)
+
+#### Life cycle <a id="life-cycle"></a>
+
+If you delete a resource group, all resources contained within it are also deleted. Organizing resources by life cycle can be useful in nonproduction environments, where you might try an experiment and then dispose of it. Resource groups make it easy to remove a set of resources all at once.
+
+#### Authorization <a id="authorization"></a>
+
+Resource groups are also a scope for applying role-based access control \(RBAC\) permissions. By applying RBAC permissions to a resource group, you can ease administration and limit access to allow only what's needed.
+
+### Azure Resource Manager <a id="azure-resource-manager"></a>
+
+Azure Resource Manager is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure account. You use management features like access control, locks, and tags to secure and organize your resources after deployment.
+
+When a user sends a request from any of the Azure tools, APIs, or SDKs, Resource Manager receives the request. It authenticates and authorizes the request. Resource Manager sends the request to the Azure service, which takes the requested action. Because all requests are handled through the same API, you see consistent results and capabilities in all the different tools.
+
+The following image shows the role Resource Manager plays in handling Azure requests.
+
+[![Diagram showing a Resource Manager request model.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/consistent-management-layer.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/consistent-management-layer-expanded.png#lightbox)
+
+All capabilities that are available in the Azure portal are also available through PowerShell, the Azure CLI, REST APIs, and client SDKs. Functionality initially released through APIs will be represented in the portal within 180 days of initial release.
+
+#### The benefits of using Resource Manager <a id="the-benefits-of-using-resource-manager"></a>
+
+With Resource Manager, you can:
+
+* Manage your infrastructure through declarative templates rather than scripts. A Resource Manager template is a JSON file that defines what you want to deploy to Azure.
+* Deploy, manage, and monitor all the resources for your solution as a group, rather than handling these resources individually.
+* Redeploy your solution throughout the development life cycle and have confidence your resources are deployed in a consistent state.
+* Define the dependencies between resources so they're deployed in the correct order.
+* Apply access control to all services because RBAC is natively integrated into the management platform.
+* Apply tags to resources to logically organize all the resources in your subscription.
+* Clarify your organization's billing by viewing costs for a group of resources that share the same tag.
+
+## Azure regions and availability zones
+
+* 7 minutes
+
+In the previous unit, you learned about Azure resources and resource groups. Resources are created in regions, which are different geographical locations around the globe that contain Azure datacenters.
+
+Azure is made up of datacenters located around the globe. When you use a service or create a resource such as a SQL database or virtual machine \(VM\), you're using physical equipment in one or more of these locations. These specific datacenters aren't exposed to users directly. Instead, Azure organizes them into regions. As you'll see later in this unit, some of these regions offer availability zones, which are different Azure datacenters within that region.
+
+### Azure regions <a id="azure-regions"></a>
+
+A _region_ is a geographical area on the planet that contains at least one but potentially multiple datacenters that are nearby and networked together with a low-latency network. Azure intelligently assigns and controls the resources within each region to ensure workloads are appropriately balanced.
+
+When you deploy a resource in Azure, you'll often need to choose the region where you want your resource deployed.
+
+ Important
+
+Some services or VM features are only available in certain regions, such as specific VM sizes or storage types. There are also some global Azure services that don't require you to select a particular region, such as Azure Active Directory, Azure Traffic Manager, and Azure DNS.
+
+A few examples of regions are West US, Canada Central, West Europe, Australia East, and Japan West. Here's a view of all the available regions as of June 2020.
+
+[![Global map of available Azure regions as of June 2020.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/regions-small.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/regions-expanded.png#lightbox)
+
+#### Why are regions important? <a id="why-are-regions-important"></a>
+
+Azure has more global regions than any other cloud provider. These regions give you the flexibility to bring applications closer to your users no matter where they are. Global regions provide better scalability and redundancy. They also preserve data residency for your services.
+
+#### Special Azure regions <a id="special-azure-regions"></a>
+
+Azure has specialized regions that you might want to use when you build out your applications for compliance or legal purposes. A few examples include:
+
+* **US DoD Central, US Gov Virginia, US Gov Iowa and more:** These regions are physical and logical network-isolated instances of Azure for U.S. government agencies and partners. These datacenters are operated by screened U.S. personnel and include additional compliance certifications.
+* **China East, China North, and more:** These regions are available through a unique partnership between Microsoft and 21Vianet, whereby Microsoft doesn't directly maintain the datacenters.
+
+Regions are what you use to identify the location for your resources. There are two other terms you should also be aware of: _geographies_ and _availability zones_.
+
+### Azure availability zones <a id="azure-availability-zones"></a>
+
+You want to ensure your services and data are redundant so you can protect your information in case of failure. When you host your infrastructure, setting up your own redundancy requires that you create duplicate hardware environments. Azure can help make your app highly available through availability zones.
+
+#### What is an availability zone? <a id="what-is-an-availability-zone"></a>
+
+Availability zones are physically separate datacenters within an Azure region. Each availability zone is made up of one or more datacenters equipped with independent power, cooling, and networking. An availability zone is set up to be an _isolation boundary_. If one zone goes down, the other continues working. Availability zones are connected through high-speed, private fiber-optic networks.
+
+[![Diagram showing three datacenters connected within a single Azure region to represent an availability zone.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/availability-zones.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/availability-zones-expanded.png#lightbox)
+
+#### Supported regions <a id="supported-regions"></a>
+
+Not every region has support for availability zones. For an updated list, see [Regions that support availability zones in Azure](https://docs.microsoft.com/en-us/azure/availability-zones/az-region).
+
+#### Use availability zones in your apps <a id="use-availability-zones-in-your-apps"></a>
+
+You can use availability zones to run mission-critical applications and build high-availability into your application architecture by co-locating your compute, storage, networking, and data resources within a zone and replicating in other zones. Keep in mind that there could be a cost to duplicating your services and transferring data between zones.
+
+Availability zones are primarily for VMs, managed disks, load balancers, and SQL databases. Azure services that support availability zones fall into two categories:
+
+* **Zonal services**: You pin the resource to a specific zone \(for example, VMs, managed disks, IP addresses\).
+* **Zone-redundant services**: The platform replicates automatically across zones \(for example, zone-redundant storage, SQL Database\).
+
+Check the documentation to determine which elements of your architecture you can associate with an availability zone.
+
+### Azure region pairs <a id="azure-region-pairs"></a>
+
+Availability zones are created by using one or more datacenters. There's a minimum of three zones within a single region. It's possible that a large disaster could cause an outage big enough to affect even two datacenters. That's why Azure also creates _region pairs_.
+
+#### What is a region pair? <a id="what-is-a-region-pair"></a>
+
+Each Azure region is always paired with another region within the same geography \(such as US, Europe, or Asia\) at least 300 miles away. This approach allows for the replication of resources \(such as VM storage\) across a geography that helps reduce the likelihood of interruptions because of events such as natural disasters, civil unrest, power outages, or physical network outages that affect both regions at once. If a region in a pair was affected by a natural disaster, for instance, services would automatically failover to the other region in its region pair.
+
+Examples of region pairs in Azure are West US paired with East US and SouthEast Asia paired with East Asia.
+
+[![Diagram showing the relationship between geography, region pair, region, and datacenter. The geography box contains two region pairs. Each region pair contains two Azure regions. Each region contains three availability zones.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/region-pairs.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/region-pairs-expanded.png#lightbox)
+
+Because the pair of regions is directly connected and far enough apart to be isolated from regional disasters, you can use them to provide reliable services and data redundancy. Some services offer automatic geo-redundant storage by using region pairs.
+
+Additional advantages of region pairs:
+
+* If an extensive Azure outage occurs, one region out of every pair is prioritized to make sure at least one is restored as quickly as possible for applications hosted in that region pair.
+* Planned Azure updates are rolled out to paired regions one region at a time to minimize downtime and risk of application outage.
+* Data continues to reside within the same geography as its pair \(except for Brazil South\) for tax- and law-enforcement jurisdiction purposes.
+
+Having a broadly distributed set of datacenters allows Azure to provide a high guarantee of availability.
+
