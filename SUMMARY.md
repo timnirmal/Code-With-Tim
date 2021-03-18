@@ -35,4 +35,5 @@
 
 * [Introduction](azure/introduction.md)
 * [Azure Fundamental Concepts](azure/azure-fundamental-concepts.md)
+* [Describe core Azure architectural components](azure/describe-core-azure-architectural-components.md)
 
