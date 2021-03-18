@@ -225,3 +225,38 @@ Having a broadly distributed set of datacenters allows Azure to provide a high g
 
 
 
+## Summary
+
+* 2 minutes
+
+In this module, you learned the concepts and terminology for several of the core Azure architecture components. Now you have the basic level of understanding for Azure architecture that you'll need to make Tailwind Traders successful as it migrates to the cloud.
+
+You learned how to describe the benefits and usage of:
+
+* Azure subscriptions and management groups.
+* Azure resources, resource groups, and Azure Resource Manager.
+* Azure regions, region pairs, and availability zones.
+
+### Learn more <a id="learn-more"></a>
+
+* [Build a cloud governance strategy on Azure](https://docs.microsoft.com/en-us/learn/modules/build-cloud-governance-strategy-azure/)
+* [Azure Resource Manager template documentation](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/)
+* [Describe core Azure architectural components](https://docs.microsoft.com/en-us/learn/modules/azure-architecture-fundamentals/)
+* [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/en-us/learn/modules/control-and-organize-with-azure-resource-manager/)
+* [Examine Azure subscriptions](https://docs.microsoft.com/en-us/learn/modules/examine-azure-subscriptions/)
+* [Regions and availability zones in Azure](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
+* [What are Azure management groups?](https://docs.microsoft.com/en-us/azure/governance/management-groups/overview)
+
+### Azure Fundamentals learning path <a id="azure-fundamentals-learning-path"></a>
+
+This module is part of the [Azure Fundamentals part 1: Describe core Azure concepts](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/) learning path, which is one of six learning paths for Azure Fundamentals.
+
+Here are the learning paths in this series:
+
+* [Azure Fundamentals part 1: Describe core Azure concepts](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/)
+* [Azure Fundamentals part 2: Describe core Azure services](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-core-azure-services/)
+* [Azure Fundamentals part 3: Describe core solutions and management tools on Azure](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-core-solutions-management-tools-azure/)
+* [Azure Fundamentals part 4: Describe general security and network security features](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-general-security-network-security-features/)
+* [Azure Fundamentals part 5: Describe identity, governance, privacy, and compliance features](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-identity-governance-privacy-compliance-features/)
+* [Azure Fundamentals part 6: Describe Azure cost management and service level agreements](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-azure-cost-management-service-level-agreements/)
+
