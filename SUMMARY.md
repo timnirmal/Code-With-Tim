@@ -33,8 +33,10 @@
 
 ## Azure
 
+* [Explore Later](azure/explore-later.md)
 * [Introduction](azure/introduction.md)
 * [Azure Fundamental Concepts](azure/azure-fundamental-concepts.md)
 * [Describe core Azure architectural components](azure/describe-core-azure-architectural-components.md)
 * [Explore Azure database and analytics services  Introduction](azure/explore-azure-database-and-analytics-services-introduction.md)
+* [Explore Azure compute services](azure/explore-azure-compute-services.md)
 

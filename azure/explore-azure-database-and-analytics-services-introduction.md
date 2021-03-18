@@ -207,3 +207,116 @@ Open-source cluster technologies have been developed, over time, to try to deal 
 
 [Azure Data Lake Analytics](https://azure.microsoft.com/services/data-lake-analytics/) is an on-demand analytics job service that simplifies big data. Instead of deploying, configuring, and tuning hardware, you write queries to transform your data and extract valuable insights. The analytics service can handle jobs of any scale instantly by setting the dial for how much power you need. You only pay for your job when it's running, making it more cost-effective.
 
+
+
+## Exercise - Create a SQL database
+
+* 12 minutes
+
+ **61%** Assigning roles...
+
+Tailwind Traders has chosen Azure SQL Database for part of its migration. You've been tasked with creating the database.
+
+In this exercise, you'll create a SQL database in Azure and then query the data in that database.
+
+### Task 1: Create the database <a id="task-1-create-the-database"></a>
+
+In this task, you create a SQL database based on the _AdventureWorksLT_ sample database.
+
+1. Sign in to the [Azure portal](https://portal.azure.com/learn.docs.microsoft.com).
+2. Select **Create a resource** &gt; **Databases** &gt; **SQL database**. Fill in the following information.
+
+   | TABLE 1 |  |
+   | :--- | :--- |
+   | Setting | Value |
+   | On the **Basics** tab, under **Project details** section: |  |
+   | Subscription | **Concierge Subscription** |
+   | Resource group | **\[sandbox resource group name\]** |
+   | Under **Database details** section: |  |
+   | Database name | **db1** |
+   | Server | Select **Create new**. |
+
+3. The **New server** panel appears. Enter the following information \(replace **nnnn** in the name of the server with letters and digits, such that the name is globally unique\).
+
+   | TABLE 2 |  |
+   | :--- | :--- |
+   | Setting | Value |
+   | Server name | **sqlservernnnn** \(must be unique\) |
+   | Server admin login | **sqluser** |
+   | Password | **Pa$$w0rd1234** |
+   | Location | **\(US\) East US** |
+
+   [![Screenshot of the Server pane and the New Server pane with fields filled in.](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-database-fundamentals/media/server-pane.png)](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-database-fundamentals/media/server-pane-expanded.png#lightbox)
+
+4. Select **OK** when you have finished.
+5. Select **Next : Networking**, and configure the following settings \(leave defaults for remainder of fields\).
+
+   | TABLE 3 |  |
+   | :--- | :--- |
+   | Setting | Value |
+   | Under **Network connectivity** section: |  |
+   | Connectivity method | **Public endpoint** \(_default_\) |
+
+   ![Screenshot of the Networking tab of the Create SQL Database pane with settings selected.](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-database-fundamentals/media/tab.png)
+
+6. Select **Next : Additional settings**, and configure the following settings.
+
+   | TABLE 4 |  |
+   | :--- | :--- |
+   | Setting | Value |
+   | Under **Data source** section: |  |
+   | Use existing data | **Sample** \(this will create the _AdventureWorksLT_ sample database\) |
+   | Under **Database collation** section: |  |
+   | Collation | _default_ |
+   | Under **Azure Defender for SQL** section: |  |
+   | Enable Azure Defender for SQL | **Not now** |
+
+   ![Screenshot of the Additional settings tab of the Create SQL Database pane with settings selected.](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-database-fundamentals/media/additional-settings-tab.png)
+
+7. Select **Review + create**.
+8. After validation success, on the **Create SQL Database** window, select **Create** to deploy the server and database.
+
+   It can take approximately two to five minutes to create the server and deploy the sample database.
+
+9. Select **Go to resource**.
+10. Select **Set server firewall**, and then select **Yes** to **Allow Azure services and resources to access this server**.
+11. Select **Save**.
+12. Select **OK**.
+
+### Task 2: Test the database <a id="task-2-test-the-database"></a>
+
+In this task, you configure the server and run a SQL query.
+
+1. From the **All resources** pane, search and select **SQL databases** and ensure that your new database was created. You might need to refresh the page.
+
+   ![Screenshot of the SQL database and server that have just been deployed.](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-database-fundamentals/media/sql-database.png)
+
+2. Select the **db1** entry representing the SQL database you created, and then select **Query editor \(preview\)** in the nav bar.
+3. Sign in as **sqluser**, with the password **Pa$$w0rd1234**.
+4. You will not be able to sign in. Read the error closely and make note of the IP address that needs to be allowed through the firewall.
+
+   ![Screenshot of the Query Editor sign-in page with the IP address error.](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-database-fundamentals/media/query-editor-login.png)
+
+5. Select **Overview** &gt; **Set server firewall**.
+6. In **Client IP address** your IP will be shown. Select **Rule name**, add your IP in both the **Start IP** and **End IP** fields, and then select **Save**.
+
+   ![Screenshot of the SQL Server firewall settings page, with the new IP rule highlighted.](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-database-fundamentals/media/sql-server-firewall-settings.png)
+
+7. Return to your SQL database and the Query Editor sign-in page. Try to sign in again as **sqluser**, with the password **Pa$$w0rd1234**. This time you should succeed. It might take a couple of minutes for the new firewall rule to be deployed. If you wait and still get an error, try selecting **Firewall settings &gt;** again.
+8. After you sign in successfully, the query pane appears. Enter the following query into the editor pane.SQLCopy
+
+   ```text
+   SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName
+   FROM SalesLT.ProductCategory pc
+   JOIN SalesLT.Product p
+   ON pc.productcategoryid = p.productcategoryid;
+   ```
+
+   [![Screenshot of the query editor with the query pane, and the commands running successfully.](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-database-fundamentals/media/query-editor.png)](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-database-fundamentals/media/query-editor-expanded.png#lightbox)
+
+9. Select **Run**, and then review the query results in the **Results** pane. The query should run successfully.
+
+   ![Screenshot of the database query editor pane, with the SQL code having been run successfully and the output visible in the results pane.](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-database-fundamentals/media/database-query-editor-pane.png)
+
+Congratulations! You've created a SQL database in Azure and successfully queried the data in that database.
+
