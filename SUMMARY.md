@@ -41,4 +41,5 @@
   * [Explore Azure database and analytics services  Introduction](azure/azure-learn/explore-azure-database-and-analytics-services-introduction.md)
   * [Explore Azure compute services](azure/azure-learn/explore-azure-compute-services.md)
   * [Explore Azure Storage services](azure/azure-learn/explore-azure-storage-services.md)
+  * [Explore Azure networking services](azure/azure-learn/explore-azure-networking-services.md)
 
