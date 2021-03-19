@@ -58,11 +58,11 @@ Cloud computing falls into one of the following computing models. If you've been
 
 The following illustration demonstrates the services that might run in each of the cloud service models.
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](../../.gitbook/assets/image%20%283%29.png)
 
 The following chart illustrates the various levels of responsibility between a cloud provider and a cloud tenant.
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../../.gitbook/assets/image%20%284%29.png)
 
 ### What is serverless computing? <a id="what-is-serverless-computing"></a>
 
