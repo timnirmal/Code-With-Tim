@@ -124,3 +124,224 @@ UDR is user-defined Routing. UDR is a significant update to Azure’s Virtual Ne
 
 [![Illustration of a local or remote gateway in peered virtual network.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/local-or-remote-gateway-in-peered-virual-network.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/local-or-remote-gateway-in-peered-virual-network-expanded.png#lightbox)
 
+## Azure Virtual Network settings
+
+100 XP
+
+* 7 minutes
+
+You can create and configure Azure Virtual Network instances from the Azure portal, Azure PowerShell on your local computer, or Azure Cloud Shell.
+
+#### Create a virtual network <a id="create-a-virtual-network"></a>
+
+When you create an Azure virtual network, you configure a number of basic settings. You'll have the option to configure advanced settings, such as multiple subnets, distributed denial of service \(DDoS\) protection, and service endpoints.
+
+![Screenshot of the Azure portal showing an example of the Create virtual network pane fields.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/create-virtual-network.png)
+
+You'll configure the following settings for a basic virtual network:
+
+* **Network name**
+
+  The network name must be unique in your subscription, but it doesn't need to be globally unique. Make the name a descriptive one that's easy to remember and identified from other virtual networks.
+
+* **Address space**
+
+  When you set up a virtual network, you define the internal address space in Classless Interdomain Routing \(CIDR\) format. This address space needs to be unique within your subscription and any other networks that you connect to.
+
+  Let's assume you choose an address space of 10.0.0.0/24 for your first virtual network. The addresses defined in this address space range from 10.0.0.1 to 10.0.0.254. You then create a second virtual network and choose an address space of 10.0.0.0/8. The addresses in this address space range from 10.0.0.1 to 10.255.255.254. Some of the addresses overlap and can't be used for the two virtual networks.
+
+  But you can use 10.0.0.0/16, with addresses that range from 10.0.0.1 to 10.0.255.254, and 10.1.0.0/16, with addresses that range from 10.1.0.1 to 10.1.255.254. You can assign these address spaces to your virtual networks because there's no address overlap.
+
+   Note
+
+  You can add address spaces after you create the virtual network.
+
+* **Subscription**
+
+  This option only applies if you have multiple subscriptions to choose from.
+
+* **Resource group**
+
+  Like any other Azure resource, a virtual network needs to exist in a resource group. You can either select an existing resource group or create a new one.
+
+* **Location**
+
+  Select the location where you want the virtual network to exist.
+
+* **Subnet**
+
+  Within each virtual network address range, you can create one or more subnets that partition the virtual network's address space. Routing between subnets will then depend on the default traffic routes. You also can define custom routes. Alternatively, you can define one subnet that encompasses all the virtual networks' address ranges.
+
+   Note
+
+  Subnet names must begin with a letter or number and end with a letter, number, or underscore. They may contain only letters, numbers, underscores, periods, or hyphens.
+
+* **DDoS protection**
+
+  You can select either Basic or Standard DDoS protection. Standard DDoS protection is a premium service. For more information on Standard DDoS protection, see [Azure DDoS protection Standard overview](https://docs.microsoft.com/en-us/azure/virtual-network/ddos-protection-overview).
+
+* **Service endpoints**
+
+  Here, you enable service endpoints. Then you select from the list which Azure service endpoints you want to enable. Options include Azure Cosmos DB, Azure Service Bus, Azure Key Vault, and so on.
+
+After you've configured these settings, select **Create**.
+
+#### Define additional settings <a id="define-additional-settings"></a>
+
+After you create a virtual network, you can then define further settings. These include:
+
+* **Network security group**
+
+  Network security groups have security rules that enable you to filter the type of network traffic that can flow in and out of virtual network subnets and network interfaces. You create the network security group separately. Then you associate it with the virtual network.
+
+* **Route table**
+
+  Azure automatically creates a route table for each subnet within an Azure virtual network and adds system default routes to the table. You can add custom route tables to modify traffic between virtual networks.
+
+You can also amend the service endpoints.
+
+![Screenshot of the Azure portal showing an example pane for editing virtual network settings.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/virtual-network-additional-settings.png)
+
+#### Configure virtual networks <a id="configure-virtual-networks"></a>
+
+After you've created a virtual network, you can change any further settings on the **Virtual network** pane in the Azure portal. Alternatively, you can use PowerShell commands or commands in Cloud Shell to make changes.
+
+![Screenshot of the Azure portal showing an example pane for configuring a virtual network.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/configure-virtual-network.png)
+
+You can then review and change settings in further subpanes. These settings include:
+
+* **Address spaces**: You can add additional address spaces to the initial definition.
+* **Connected devices**: Use the virtual network to connect machines.
+* **Subnets**: You can add additional subnets.
+* **Peerings**: Link virtual networks in peering arrangements.
+
+You can also monitor and troubleshoot virtual networks. Or, you can create an automation script to generate the current virtual network.
+
+Virtual networks are powerful and highly configurable mechanisms for connecting entities in Azure. You can connect Azure resources to one another or to resources you have on-premises. You can isolate, filter, and route your network traffic. Azure allows you to increase security where you feel you need it.
+
+## Azure VPN Gateway fundamentals
+
+100 XP
+
+* 10 minutes
+
+A virtual private network \(VPN\) is a type of private interconnected network. VPNs use an encrypted tunnel within another network. They're typically deployed to connect two or more trusted private networks to one another over an untrusted network \(typically the public internet\). Traffic is encrypted while traveling over the untrusted network to prevent eavesdropping or other attacks.
+
+For our Tailwind Traders scenario, VPNs can enable branch offices to share sensitive information between locations. For example, let's say that your offices on the East Coast region of North America need to access your company's private customer data, which is stored on servers that are physically located in a West Coast region. A VPN that connects your East Coast offices to your West Coast servers allows your company to securely access your private customer data.
+
+### VPN gateways <a id="vpn-gateways"></a>
+
+A VPN gateway is a type of virtual network gateway. Azure VPN Gateway instances are deployed in Azure Virtual Network instances and enable the following connectivity:
+
+* Connect on-premises datacenters to virtual networks through a _site-to-site_ connection.
+* Connect individual devices to virtual networks through a _point-to-site_ connection.
+* Connect virtual networks to other virtual networks through a _network-to-network_ connection.
+
+[![Visualization of a VPN connection to Azure](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/vpngateway-site-to-site-connection-diagram.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/vpngateway-site-to-site-connection-diagram-expanded.png#lightbox)
+
+All transferred data is encrypted in a private tunnel as it crosses the internet. You can deploy only one VPN gateway in each virtual network, but you can use one gateway to connect to multiple locations, which includes other virtual networks or on-premises datacenters.
+
+When you deploy a VPN gateway, you specify the VPN type: either _policy-based_ or _route-based_. The main difference between these two types of VPNs is how traffic to be encrypted is specified. In Azure, both types of VPN gateways use a pre-shared key as the only method of authentication. Both types also rely on Internet Key Exchange \(IKE\) in either version 1 or version 2 and Internet Protocol Security \(IPSec\). IKE is used to set up a security association \(an agreement of the encryption\) between two endpoints. This association is then passed to the IPSec suite, which encrypts and decrypts data packets encapsulated in the VPN tunnel.
+
+#### Policy-based VPNs <a id="policy-based-vpns"></a>
+
+Policy-based VPN gateways specify statically the IP address of packets that should be encrypted through each tunnel. This type of device evaluates every data packet against those sets of IP addresses to choose the tunnel where that packet is going to be sent through.
+
+Key features of policy-based VPN gateways in Azure include:
+
+* Support for IKEv1 only.
+* Use of _static routing_, where combinations of address prefixes from both networks control how traffic is encrypted and decrypted through the VPN tunnel. The source and destination of the tunneled networks are declared in the policy and don't need to be declared in routing tables.
+* Policy-based VPNs must be used in specific scenarios that require them, such as for compatibility with legacy on-premises VPN devices.
+
+#### Route-based VPNs <a id="route-based-vpns"></a>
+
+If defining which IP addresses are behind each tunnel is too cumbersome, route-based gateways can be used. With route-based gateways, IPSec tunnels are modeled as a network interface or virtual tunnel interface. IP routing \(either static routes or dynamic routing protocols\) decides which one of these tunnel interfaces to use when sending each packet. Route-based VPNs are the preferred connection method for on-premises devices. They're more resilient to topology changes such as the creation of new subnets.
+
+Use a route-based VPN gateway if you need any of the following types of connectivity:
+
+* Connections between virtual networks
+* Point-to-site connections
+* Multisite connections
+* Coexistence with an Azure ExpressRoute gateway
+
+Key features of route-based VPN gateways in Azure include:
+
+* Supports IKEv2
+* Uses any-to-any \(wildcard\) traffic selectors
+* Can use _dynamic routing protocols_, where routing/forwarding tables direct traffic to different IPSec tunnels
+
+  In this case, the source and destination networks aren't statically defined as they are in policy-based VPNs or even in route-based VPNs with static routing. Instead, data packets are encrypted based on network routing tables that are created dynamically using routing protocols such as Border Gateway Protocol \(BGP\).
+
+### VPN gateway sizes <a id="vpn-gateway-sizes"></a>
+
+The capabilities of your VPN gateway are determined by the SKU or size that you deploy. This table shows the main capabilities of each available SKU.
+
+| VPN GATEWAY SIZES |  |  |  |
+| :--- | :--- | :--- | :--- |
+| SKU | Site-to-site/Network-to-network tunnels | Aggregate throughput benchmark | Border Gateway Protocol support |
+| Basic \[See Note\] | Maximum: 10 | 100 Mbps | Not supported |
+| VpnGw1/Az | Maximum: 30 | 650 Mbps | Supported |
+| VpnGw2/Az | Maximum: 30 | 1 Gbps | Supported |
+| VpnGw3/Az | Maximum: 30 | 1.25 Gbps | Supported |
+
+ Note
+
+A Basic VPN gateway should only be used for Dev/Test workloads. In addition, it's unsupported to migrate from Basic to the VpnGW1/2/3/Az SKUs at a later time without having to remove the gateway and redeploy.
+
+### Deploy VPN gateways <a id="deploy-vpn-gateways"></a>
+
+Before you can deploy a VPN gateway, you'll need some Azure and on-premises resources.
+
+#### Required Azure resources <a id="required-azure-resources"></a>
+
+You'll need these Azure resources before you can deploy an operational VPN gateway:
+
+* **Virtual network**. Deploy a virtual network with enough address space for the additional subnet that you'll need for the VPN gateway. The address space for this virtual network must not overlap with the on-premises network that you'll be connecting to. You can deploy only one VPN gateway within a virtual network.
+* **GatewaySubnet**. Deploy a subnet called `GatewaySubnet` for the VPN gateway. Use at least a **/27** address mask to make sure you have enough IP addresses in the subnet for future growth. You can't use this subnet for any other services.
+* **Public IP address**. Create a Basic-SKU dynamic public IP address if you're using a non-zone-aware gateway. This address provides a public-routable IP address as the target for your on-premises VPN device. This IP address is dynamic, but it won't change unless you delete and re-create the VPN gateway.
+* **Local network gateway**. Create a local network gateway to define the on-premises network's configuration, such as where the VPN gateway will connect and what it will connect to. This configuration includes the on-premises VPN device's public IPv4 address and the on-premises routable networks. This information is used by the VPN gateway to route packets that are destined for on-premises networks through the IPSec tunnel.
+* **Virtual network gateway**. Create the virtual network gateway to route traffic between the virtual network and the on-premises datacenter or other virtual networks. The virtual network gateway can be either a VPN or ExpressRoute gateway, but this unit only deals with VPN virtual network gateways. \(You'll learn more about ExpressRoute in a separate unit later in this module.\)
+* **Connection**. Create a connection resource to create a logical connection between the VPN gateway and the local network gateway.
+
+  * The connection is made to the on-premises VPN device's IPv4 address as defined by the local network gateway.
+  * The connection is made from the virtual network gateway and its associated public IP address.
+
+  You can create multiple connections.
+
+The following diagram shows this combination of resources and their relationships to help you better understand what's required to deploy a VPN gateway.
+
+[![Visualization of resource requirements for a VPN gateway.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/resource-requirements-for-vpn-gateway.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/resource-requirements-for-vpn-gateway-expanded.png#lightbox)
+
+#### Required on-premises resources <a id="required-on-premises-resources"></a>
+
+To connect your datacenter to a VPN gateway, you'll need these on-premises resources:
+
+* A VPN device that supports policy-based or route-based VPN gateways
+* A public-facing \(internet-routable\) IPv4 address
+
+### High-availability scenarios <a id="high-availability-scenarios"></a>
+
+There are several ways to ensure you have a fault-tolerant configuration.
+
+#### Active/standby <a id="activestandby"></a>
+
+By default, VPN gateways are deployed as two instances in an active/standby configuration, even if you only see one VPN gateway resource in Azure. When planned maintenance or unplanned disruption affects the active instance, the standby instance automatically assumes responsibility for connections without any user intervention. Connections are interrupted during this failover, but they're typically restored within a few seconds for planned maintenance and within 90 seconds for unplanned disruptions.
+
+[![Visualization of active/standby virtual network gateway.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/active-standby.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/active-standby-expanded.png#lightbox)
+
+#### Active/active <a id="activeactive"></a>
+
+With the introduction of support for the BGP routing protocol, you can also deploy VPN gateways in an active/active configuration. In this configuration, you assign a unique public IP address to each instance. You then create separate tunnels from the on-premises device to each IP address. You can extend the high availability by deploying an additional VPN device on-premises.
+
+[![Visualization of active/active virtual network gateway.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/dual-redundancy.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/dual-redundancy-expanded.png#lightbox)
+
+#### ExpressRoute failover <a id="expressroute-failover"></a>
+
+Another high-availability option is to configure a VPN gateway as a secure failover path for ExpressRoute connections. ExpressRoute circuits have resiliency built in. But they aren't immune to physical problems that affect the cables delivering connectivity or outages that affect the complete ExpressRoute location. In high-availability scenarios, where there's risk associated with an outage of an ExpressRoute circuit, you can also provision a VPN gateway that uses the internet as an alternative method of connectivity. In this way, you can ensure there's always a connection to the virtual networks.
+
+#### Zone-redundant gateways <a id="zone-redundant-gateways"></a>
+
+In regions that support availability zones, VPN gateways and ExpressRoute gateways can be deployed in a zone-redundant configuration. This configuration brings resiliency, scalability, and higher availability to virtual network gateways. Deploying gateways in Azure availability zones physically and logically separates gateways within a region while protecting your on-premises network connectivity to Azure from zone-level failures. These gateways require different gateway SKUs and use Standard public IP addresses instead of Basic public IP addresses.
+
+
+
