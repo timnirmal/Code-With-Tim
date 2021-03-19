@@ -343,5 +343,126 @@ Another high-availability option is to configure a VPN gateway as a secure failo
 
 In regions that support availability zones, VPN gateways and ExpressRoute gateways can be deployed in a zone-redundant configuration. This configuration brings resiliency, scalability, and higher availability to virtual network gateways. Deploying gateways in Azure availability zones physically and logically separates gateways within a region while protecting your on-premises network connectivity to Azure from zone-level failures. These gateways require different gateway SKUs and use Standard public IP addresses instead of Basic public IP addresses.
 
+## Azure ExpressRoute fundamentals
+
+100 XP
+
+* 5 minutes
+
+ExpressRoute lets you extend your on-premises networks into the Microsoft cloud over a private connection with the help of a connectivity provider. With ExpressRoute, you can establish connections to Microsoft cloud services, such as Microsoft Azure and Microsoft 365.
+
+Connectivity can be from an any-to-any \(IP VPN\) network, a point-to-point Ethernet network, or a virtual cross-connection through a connectivity provider at a colocation facility. ExpressRoute connections don't go over the public Internet. This allows ExpressRoute connections to offer more reliability, faster speeds, consistent latencies, and higher security than typical connections over the Internet. For information on how to connect your network to Microsoft using ExpressRoute, see ExpressRoute connectivity models.
+
+[![Visualization that shows a high-level overview of the Azure ExpressRoute service.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/azure-expressroute-overview.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/azure-expressroute-overview-expanded.png#lightbox)
+
+As part of your work for Tailwind Traders, you should understand what Azure ExpressRoute is and how it integrates with on-premises and Azure networks. In this unit, you'll learn about the benefits that ExpressRoute provides compared to other site-to-site connectivity options. As a result, you'll learn whether ExpressRoute can provide your company with the best possible network performance.
+
+Throughout this unit, we'll focus on two different layers of the Open Systems Interconnection \(OSI\) model:
+
+* **Layer 2 \(L2\)**: This layer is the Data Link Layer, which provides node-to-node communication between two nodes on the same network.
+* **Layer 3 \(L3\)**: This layer is the Network Layer, which provides addressing and routing between nodes on a multi-node network.
+
+### Features and benefits of ExpressRoute <a id="features-and-benefits-of-expressroute"></a>
+
+There are several benefits to using ExpressRoute as the connection service between Azure and on-premises networks.
+
+* Layer 3 connectivity between your on-premises network and the Microsoft Cloud through a connectivity provider. Connectivity can be from an any-to-any \(IPVPN\) network, a point-to-point Ethernet connection, or through a virtual cross-connection via an Ethernet exchange.
+* Connectivity to Microsoft cloud services across all regions in the geopolitical region.
+* Global connectivity to Microsoft services across all regions with the ExpressRoute premium add-on.
+* Dynamic routing between your network and Microsoft via BGP.
+* Built-in redundancy in every peering location for higher reliability.
+* Connection uptime SLA.
+* QoS support for Skype for Business.
+
+#### Layer 3 connectivity <a id="layer-3-connectivity"></a>
+
+ExpressRoute provides Layer 3 \(address-level\) connectivity between your on-premises network and the Microsoft cloud through connectivity partners. These connections can be from a point-to-point or any-to-any network. They can also be virtual cross-connections through an exchange.
+
+#### Built-in redundancy <a id="built-in-redundancy"></a>
+
+Each connectivity provider uses redundant devices to ensure that connections established with Microsoft are highly available. You can configure multiple circuits to complement this feature. All redundant connections are configured with Layer 3 connectivity to meet service-level agreements.
+
+#### Connectivity to Microsoft cloud services <a id="connectivity-to-microsoft-cloud-services"></a>
+
+ExpressRoute enables direct access to the following services in all regions:
+
+* Microsoft Office 365
+* Microsoft Dynamics 365
+* Azure compute services, such as Azure Virtual Machines
+* Azure cloud services, such as Azure Cosmos DB and Azure Storage
+
+Office 365 was created to be accessed securely and reliably via the internet. For this reason, we recommend the use of ExpressRoute for specific scenarios. The "Learn more" section at the end of this module includes a link about using ExpressRoute to access Office 365.
+
+#### Across on-premises connectivity with ExpressRoute Global Reach <a id="across-on-premises-connectivity-with-expressroute-global-reach"></a>
+
+You can enable ExpressRoute Global Reach to exchange data across your on-premises sites by connecting your ExpressRoute circuits. For example, assume that you have a private datacenter in California connected to ExpressRoute in Silicon Valley. You have another private datacenter in Texas connected to ExpressRoute in Dallas. With ExpressRoute Global Reach, you can connect your private datacenters through two ExpressRoute circuits. Your cross-datacenter traffic will travel through the Microsoft network.
+
+#### Dynamic routing <a id="dynamic-routing"></a>
+
+ExpressRoute uses the Border Gateway Protocol \(BGP\) routing protocol. BGP is used to exchange routes between on-premises networks and resources running in Azure. This protocol enables dynamic routing between your on-premises network and services running in the Microsoft cloud.
+
+### ExpressRoute connectivity models <a id="expressroute-connectivity-models"></a>
+
+ExpressRoute supports three models that you can use to connect your on-premises network to the Microsoft cloud:
+
+* CloudExchange colocation
+* Point-to-point Ethernet connection
+* Any-to-any connection
+
+[![Azure connectivity models](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/azure-connectivity-models.png)](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-networking-fundamentals/media/azure-connectivity-models-expanded.png#lightbox)
+
+#### Colocation at a cloud exchange <a id="colocation-at-a-cloud-exchange"></a>
+
+Colocated providers can normally offer both Layer 2 and Layer 3 connections between your infrastructure, which might be located in the colocation facility, and the Microsoft cloud. For example, if your datacenter is colocated at a cloud exchange such as an ISP, you can request a virtual cross-connection to the Microsoft cloud.
+
+#### Point-to-point Ethernet connection <a id="point-to-point-ethernet-connection"></a>
+
+Point-to-point connections provide Layer 2 and Layer 3 connectivity between your on-premises site and Azure. You can connect your offices or datacenters to Azure by using the point-to-point links. For example, if you have an on-premises datacenter, you can use a point-to-point Ethernet link to connect to Microsoft.
+
+#### Any-to-any networks <a id="any-to-any-networks"></a>
+
+With any-to-any connectivity, you can integrate your wide area network \(WAN\) with Azure by providing connections to your offices and datacenters. Azure integrates with your WAN connection to provide a connection like you would have between your datacenter and any branch offices.
+
+With any-to-any connections, all WAN providers offer Layer 3 connectivity. For example, if you already use Multiprotocol Label Switching to connect to your branch offices or other sites in your organization, an ExpressRoute connection to Microsoft behaves like any other location on your private WAN.
+
+### Security considerations <a id="security-considerations"></a>
+
+With ExpressRoute, your data doesn't travel over the public internet, so it's not exposed to the potential risks associated with internet communications. ExpressRoute is a private connection from your on-premises infrastructure to your Azure infrastructure. Even if you have an ExpressRoute connection, DNS queries, certificate revocation list checking, and Azure Content Delivery Network requests are still sent over the public internet.
+
+
+
+## Summary
+
+100 XP
+
+* 2 minutes
+
+In this module, you used the Tailwind Traders scenario to learn about the core networking resources that are available in Azure. You learned about the benefits and usage of Azure Virtual Network, Azure VPN Gateway, and Azure ExpressRoute.
+
+You can now apply this information to help your business use Azure's networking resources to configure its network infrastructure.
+
+### Learn more <a id="learn-more"></a>
+
+* [Azure networking services overview](https://docs.microsoft.com/en-us/azure/networking/networking-overview)
+* [Virtual Network documentation](https://docs.microsoft.com/en-us/azure/virtual-network/)
+* [ExpressRoute overview](https://docs.microsoft.com/en-us/azure/expressroute/)
+* [ExpressRoute FAQ](https://docs.microsoft.com/en-us/azure/expressroute/expressroute-faqs)
+* [Learning Path: Architect network infrastructure in Azure](https://docs.microsoft.com/en-us/learn/paths/architect-network-infrastructure/)
+* [Module: Connect your on-premises network to the Microsoft global network by using ExpressRoute](https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-expressroute/)
+* [Virtual network peering](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview)
+
+### Azure Fundamentals learning path <a id="azure-fundamentals-learning-path"></a>
+
+This module is part of the [Azure Fundamentals part 2: Describe core Azure services](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-core-azure-services/) learning path, which is one of six learning paths for Azure Fundamentals.
+
+Here are the learning paths in this series:
+
+* [Azure Fundamentals part 1: Describe core Azure concepts](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/)
+* [Azure Fundamentals part 2: Describe core Azure services](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-core-azure-services/)
+* [Azure Fundamentals part 3: Describe core solutions and management tools on Azure](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-core-solutions-management-tools-azure/)
+* [Azure Fundamentals part 4: Describe general security and network security features](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-general-security-network-security-features/)
+* [Azure Fundamentals part 5: Describe identity, governance, privacy, and compliance features](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-identity-governance-privacy-compliance-features/)
+* [Azure Fundamentals part 6: Describe Azure cost management and service level agreements](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-azure-cost-management-service-level-agreements/)
+
 
 
