@@ -32,7 +32,7 @@
 
 {% embed url="http://www.cplusplus.com/reference/cmath/tan/" %}
 
-j
+
 
 
 
