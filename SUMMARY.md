@@ -47,4 +47,7 @@
   * [Get started with AI on Azure](azure/azure-learn/untitled.md)
   * [Use automated machine learning in Azure Machine Learning](azure/azure-learn/use-automated-machine-learning-in-azure-machine-learning.md)
   * [Create a Regression Model with Azure Machine Learning designer](azure/azure-learn/create-a-regression-model-with-azure-machine-learning-designer.md)
+  * [Create a classification model with Azure Machine Learning designer](azure/azure-learn/create-a-classification-model-with-azure-machine-learning-designer.md)
+  * [Untitled](azure/azure-learn/untitled-1.md)
+  * [Define identity and access management in Azure Active Directory](azure/azure-learn/define-identity-and-access-management-in-azure-active-directory.md)
 
