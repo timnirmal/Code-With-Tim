@@ -11,6 +11,7 @@
 ## Languages
 
 * [C++](languages/c++/README.md)
+  * [Untitled](languages/c++/untitled.md)
   * [Resources](languages/c++/resources.md)
   * [Viva Resources](languages/c++/viva-resources.md)
 * [Html](languages/html/README.md)
@@ -43,5 +44,7 @@
   * [Explore Azure compute services](azure/azure-learn/explore-azure-compute-services.md)
   * [Explore Azure Storage services](azure/azure-learn/explore-azure-storage-services.md)
   * [Explore Azure networking services](azure/azure-learn/explore-azure-networking-services.md)
-  * [Untitled](azure/azure-learn/untitled.md)
+  * [Get started with AI on Azure](azure/azure-learn/untitled.md)
+  * [Use automated machine learning in Azure Machine Learning](azure/azure-learn/use-automated-machine-learning-in-azure-machine-learning.md)
+  * [Create a Regression Model with Azure Machine Learning designer](azure/azure-learn/create-a-regression-model-with-azure-machine-learning-designer.md)
 

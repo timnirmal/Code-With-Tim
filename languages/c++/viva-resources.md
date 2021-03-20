@@ -1,5 +1,9 @@
 # Viva Resources
 
+{% embed url="https://github.com/MicrosoftDocs/cpp-docs/blob/03669702314eb07ade8b2570ffcee7da8f68647d/CONTRIBUTING.md" %}
+
+
+
 {% embed url="https://www.geeksforgeeks.org/difference-between-static-and-dynamic-memory-allocation-in-c/" %}
 
 {% embed url="https://www.programiz.com/article/difference-compiler-interpreter" %}
@@ -32,7 +36,25 @@
 
 {% embed url="http://www.cplusplus.com/reference/cmath/tan/" %}
 
+## Second Browser
 
+[http://programmertutor16.blogspot.com/2013/10/advantages-and-disadvantages-of.html](http://programmertutor16.blogspot.com/2013/10/advantages-and-disadvantages-of.html)
+
+{% embed url="https://www.guru99.com/cpp-pointers.html\#4" %}
+
+{% embed url="https://beginnersbook.com/2017/08/cpp-pointers/" %}
+
+{% embed url="https://www.tutorialspoint.com/what-is-memory-leak-in-c-cplusplus" %}
+
+{% embed url="https://www.w3schools.com/cpp/cpp\_function\_param.asp" %}
+
+{% embed url="https://www.sitesbay.com/cpp/cpp-header-files" %}
+
+{% embed url="https://www.tutorialspoint.com/cprogramming/c\_header\_files.htm" %}
+
+{% embed url="https://docs.microsoft.com/en-us/cpp/cpp/statements-cpp?view=msvc-160" %}
+
+{% embed url="https://www.tutorialspoint.com/cplusplus/cpp\_if\_statement.htm" %}
 
 
 
