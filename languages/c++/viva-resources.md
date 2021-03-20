@@ -34,5 +34,11 @@
 
 ## Second Browser
 
+[http://programmertutor16.blogspot.com/2013/10/advantages-and-disadvantages-of.html](http://programmertutor16.blogspot.com/2013/10/advantages-and-disadvantages-of.html)
+
+{% embed url="https://www.guru99.com/cpp-pointers.html\#4" %}
+
+{% embed url="https://beginnersbook.com/2017/08/cpp-pointers/" %}
+
 
 
