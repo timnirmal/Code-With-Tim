@@ -12,6 +12,7 @@
 
 * [C++](languages/c++/README.md)
   * [Resources](languages/c++/resources.md)
+  * [Viva Resources](languages/c++/viva-resources.md)
 * [Html](languages/html/README.md)
   * [Introduction](languages/html/introduction.md)
   * [Basics](languages/html/basics/README.md)
