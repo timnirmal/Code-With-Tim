@@ -1,7 +1,5 @@
 # Explore Azure database and analytics services  Introduction
 
-
-
 ## Introduction
 
 * 2 minutes
@@ -91,7 +89,7 @@ Like Azure SQL Database, Azure SQL Managed Instance is a platform as a service \
 
 Azure SQL Database and Azure SQL Managed Instance offer many of the same features; however, Azure SQL Managed Instance provides several options that might not be available to Azure SQL Database. For example, Tailwind Traders currently uses several on-premises servers running SQL Server, and they would like to migrate their existing databases to a SQL database running in the cloud. However, several of their databases use Cyrillic characters for collation. In this scenario, Tailwind Traders should migrate their databases to an Azure SQL Managed Instance, since Azure SQL Database only uses the default `SQL_Latin1_General_CP1_CI_AS` server collation.
 
- Note
+Note
 
 For a detailed list of the differences between Azure SQL Database and Azure SQL Managed Instance, see [Features comparison: Azure SQL Database and Azure SQL Managed Instance](https://docs.microsoft.com/en-us/azure/azure-sql/database/features-comparison/).
 
@@ -101,7 +99,7 @@ Azure SQL Managed Instance makes it easy to migrate your on-premises data on SQL
 
 ![The process flow for data migration to Azure SQL Managed Instance.](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-database-fundamentals/media/migration-process-flow-small.png)
 
- Note
+Note
 
 For a detailed description of the migration process, see [Migration guide: SQL Server to SQL Managed Instance](https://docs.microsoft.com/en-us/azure/azure-sql/migration-guides/managed-instance/sql-server-to-managed-instance-guide)
 
@@ -170,8 +168,7 @@ The Single Server deployment option offers three pricing tiers: Basic, General P
 
 The Hyperscale \(Citus\) option horizontally scales queries across multiple machines by using sharding. Its query engine parallelizes incoming SQL queries across these servers for faster responses on large datasets. It serves applications that require greater scale and performance, generally workloads that are approaching, or already exceed, 100 GB of data.
 
-The Hyperscale \(Citus\) deployment option supports multi-tenant applications, real-time operational analytics, and high throughput transactional workloads. Applications built for PostgreSQL can run distributed queries on Hyperscale \(Citus\) with standard connection libraries and minimal changes.  
-
+The Hyperscale \(Citus\) deployment option supports multi-tenant applications, real-time operational analytics, and high throughput transactional workloads. Applications built for PostgreSQL can run distributed queries on Hyperscale \(Citus\) with standard connection libraries and minimal changes.
 
 ## Explore big data and analytics
 
@@ -207,13 +204,11 @@ Open-source cluster technologies have been developed, over time, to try to deal 
 
 [Azure Data Lake Analytics](https://azure.microsoft.com/services/data-lake-analytics/) is an on-demand analytics job service that simplifies big data. Instead of deploying, configuring, and tuning hardware, you write queries to transform your data and extract valuable insights. The analytics service can handle jobs of any scale instantly by setting the dial for how much power you need. You only pay for your job when it's running, making it more cost-effective.
 
-
-
 ## Exercise - Create a SQL database
 
 * 12 minutes
 
- **61%** Assigning roles...
+  **61%** Assigning roles...
 
 Tailwind Traders has chosen Azure SQL Database for part of its migration. You've been tasked with creating the database.
 

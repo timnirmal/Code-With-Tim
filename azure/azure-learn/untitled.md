@@ -1,7 +1,5 @@
 # Get started with AI on Azure
 
-
-
 ## Introduction to AI
 
 100 XP
@@ -21,8 +19,6 @@ Simply put, AI is the creation of software that imitates human behaviors and cap
 * **Computer vision** - The capability of software to interpret the world visually through cameras, video, and images.
 * **Natural language processing** - The capability for a computer to interpret written or spoken language, and respond in kind.
 * **Conversational AI** - The capability of a software "agent" to participate in a conversation.
-
-
 
 ## Understand machine learning
 
@@ -94,8 +90,6 @@ In Microsoft Azure, the **Anomaly Detector** service provides an application pro
 
 To learn more, view the [Anomaly Detector service web site](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/).
 
-
-
 ## Understand computer vision
 
 100 XP
@@ -143,8 +137,6 @@ To see an example of a how computer vision can be used to analyze images, follow
 1. Open another browser tab and go to [https://aidemos.microsoft.com/computer-vision](https://aidemos.microsoft.com/computer-vision).
 2. Use the demo interface to try each of the steps. For each step, you can select images and review the information returned by the Computer Vision service.
 
-
-
 ## Understand natural language processing
 
 100 XP
@@ -182,8 +174,6 @@ To see an example of a how you can use natural language to interact with an AI s
 
 1. Open another browser tab and go to [https://aidemos.microsoft.com/luis/demo](https://aidemos.microsoft.com/luis/demo).
 2. Use the demo interface to control the lighting in the virtual home. You can type instructions, use the microphone button to speak commands, or select any of the suggested phrases to see how the system responds.
-
-
 
 ## Understand conversational AI
 
@@ -293,8 +283,7 @@ Here's an activity to help you learn more about how principles apply to an AI sy
 
 ### Further resources <a id="further-resources"></a>
 
-For more resources to help you put the responsible AI principles into practice, see [https://www.microsoft.com/ai/responsible-ai-resources](https://www.microsoft.com/ai/responsible-ai-resources).  
-
+For more resources to help you put the responsible AI principles into practice, see [https://www.microsoft.com/ai/responsible-ai-resources](https://www.microsoft.com/ai/responsible-ai-resources).
 
 ## Summary
 

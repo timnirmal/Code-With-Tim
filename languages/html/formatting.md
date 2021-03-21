@@ -41,12 +41,11 @@
 </pre>
 </body>
 </html>
-
 ```
 {% endtab %}
 {% endtabs %}
 
-## &lt;Mark&gt; 
+## &lt;Mark&gt;
 
 ```markup
 <head>

@@ -43,8 +43,7 @@ The following video discusses the various kinds of machine learning model you ca
 
 ### Azure Machine Learning <a id="azure-machine-learning"></a>
 
-Training and deploying an effective machine learning model involves a lot of work, much of it time-consuming and resource-intensive. Azure Machine Learning is a cloud-based service that helps simplify some of the tasks and reduce the time it takes to prepare data, train a model, and deploy a predictive service. In the rest of this unit, you'll explore Azure Machine Learning, and in particular its _automated machine learning_ capability.  
-
+Training and deploying an effective machine learning model involves a lot of work, much of it time-consuming and resource-intensive. Azure Machine Learning is a cloud-based service that helps simplify some of the tasks and reduce the time it takes to prepare data, train a model, and deploy a predictive service. In the rest of this unit, you'll explore Azure Machine Learning, and in particular its _automated machine learning_ capability.
 
 ## Create an Azure Machine Learning workspace
 
@@ -60,7 +59,7 @@ Azure Machine Learning is a cloud-based platform for building and operating mach
 
 To use Azure Machine Learning, you create a _workspace_ in your Azure subscription. You can then use this workspace to manage data, compute resources, code, models, and other artifacts related to your machine learning workloads.
 
- Note
+Note
 
 This module is one of many that make use of an Azure Machine Learning workspace, including the other modules in the [Create no-code predictive models with Azure Machine Learning](https://docs.microsoft.com/en-us/learn/paths/create-no-code-predictive-models-azure-machine-learning/) learning path. If you are using your own Azure subscription, consider creating the workspace once and reusing it in other modules. After completing each module, be sure to follow the **Clean Up** instructions at the end of the module to stop compute resources.
 
@@ -105,6 +104,7 @@ Compute targets are cloud-based resources on which you can run model training an
    * **Compute name**: _enter a unique name_
    * **Enable SSH access**: Unselected
 3. While the compute instance is being created, switch to the **Compute Clusters** tab, and add a new compute cluster with the following settings. You'll use this to train a machine learning model:
+
    * **Virtual Machine priority**: Dedicated
    * **Virtual Machine type**: CPU
    * **Virtual Machine size**: Standard\_DS11\_v2 \(Choose **Select from all options** to search for and select this machine size\)
@@ -114,13 +114,11 @@ Compute targets are cloud-based resources on which you can run model training an
    * **Idle seconds before scale down**: 120
    * **Enable SSH access**: Unselected
 
- Note
+   Note
 
 If you decide not to complete this module, be sure to stop your compute instance to avoid incurring unnecessary charges to your Azure subscription.
 
 The compute targets will take some time to be created. You can move onto the next unit while you wait.
-
-
 
 ## Explore data
 
@@ -171,7 +169,7 @@ In Azure Machine Learning, data for model training and other operations is usual
 
 Azure Machine Learning includes an _automated machine learning_ capability that leverages the scalability of cloud compute to automatically try multiple pre-processing techniques and model-training algorithms in parallel to find the best performing supervised machine learning model for your data.
 
- Note
+Note
 
 The automated machine learning capability in Azure Machine Learning supports _supervised_ machine learning models - in other words, models for which the training data includes known label values. You can use automated machine learning to train models for:
 
@@ -229,8 +227,6 @@ After the experiment has finished; you can review the best performing model that
 5. Select the **Explanations** tab. Click on the arrows &gt;&gt; next to **Explanation ID** to expand the explanations list. Select an explanation ID, select **View previous dashboard experience** on the right-hand side. Then select **Global Importance**. This chart shows how much each feature in the dataset influences the label prediction, like this:
 
    ![Feature importance](https://docs.microsoft.com/en-us/learn/wwl-data-ai/use-automated-machine-learning/media/feature-importance.png)
-
-
 
 ## Deploy a model as a service
 
@@ -304,7 +300,7 @@ Now that you've deployed a service, you can test it using some simple code.
        print(response)
    ```
 
-    Note
+   Note
 
    Don't worry too much about the details of the code. It just defines features for a five day period using hypothetical weather forecast data, and uses the **predict-rentals** service you created to predict cycle rentals for those five days.
 
@@ -312,8 +308,6 @@ Now that you've deployed a service, you can test it using some simple code.
 7. Switch to the browser tab containing the **Consume** page for the **predict-rentals** service, and copy the Primary Key for your service. The switch back to the tab containing the notebook and paste the key into the code, replacing YOUR\_KEY.
 8. Save the notebook, Then use the **▷** button next to the cell to run the code.
 9. Verify that predicted number of rentals for each day in the five day period are returned.
-
-
 
 ## Summary
 
@@ -334,6 +328,4 @@ If you have finished exploring Azure Machine Learning, you can delete the resour
 
 1. In the [Azure portal](https://portal.azure.com/), in the **Resource groups** page, open the resource group you specified when creating your Azure Machine Learning workspace.
 2. Click **Delete resource group**, type the resource group name to confirm you want to delete it, and select **Delete**.
-
-
 

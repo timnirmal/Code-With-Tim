@@ -19,15 +19,13 @@ Having seen the top-down hierarchy of organization, let's describe each of those
 
 You'll examine each of these four organizational levels in the next few units.
 
-
-
 ## Azure subscriptions and management groups
 
 * 6 minutes
 
 As Tailwind Traders gets started with Azure, one of your first steps will be to create at least one Azure subscription. You'll use it to create your cloud-based resources in Azure.
 
- Note
+Note
 
 An Azure resource is a manageable item that's available through Azure. Virtual machines \(VMs\), storage accounts, web apps, databases, and virtual networks are all examples of resources.
 
@@ -87,8 +85,6 @@ Another scenario where you would use management groups is to provide user access
 * Each management group and subscription can support only one parent.
 * Each management group can have many children.
 * All subscriptions and management groups are within a single hierarchy in each directory.
-
-
 
 ## Azure resources and Azure Resource Manager
 
@@ -155,7 +151,7 @@ A _region_ is a geographical area on the planet that contains at least one but p
 
 When you deploy a resource in Azure, you'll often need to choose the region where you want your resource deployed.
 
- Important
+Important
 
 Some services or VM features are only available in certain regions, such as specific VM sizes or storage types. There are also some global Azure services that don't require you to select a particular region, such as Azure Active Directory, Azure Traffic Manager, and Azure DNS.
 
@@ -223,8 +219,6 @@ Additional advantages of region pairs:
 
 Having a broadly distributed set of datacenters allows Azure to provide a high guarantee of availability.
 
-
-
 ## Summary
 
 * 2 minutes
@@ -259,10 +253,6 @@ Here are the learning paths in this series:
 * [Azure Fundamentals part 4: Describe general security and network security features](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-general-security-network-security-features/)
 * [Azure Fundamentals part 5: Describe identity, governance, privacy, and compliance features](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-identity-governance-privacy-compliance-features/)
 * [Azure Fundamentals part 6: Describe Azure cost management and service level agreements](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-azure-cost-management-service-level-agreements/)
-
-
-
-
 
 ## Exercise - Create a website hosted in Azure
 
@@ -352,7 +342,7 @@ The free sandbox allows you to create resources in a subset of the Azure global 
 
    ![Screenshot of the Azure portal showing the new WordPress app service configured as instructed.](https://docs.microsoft.com/en-gb/learn/azure-fundamentals/azure-architecture-fundamentals/media/config-info-create.png)
 
-    Note
+   Note
 
    If you still see a section called **Database**, make sure you selected the correct **Database Provider** described in the preceding configuration.
 
@@ -383,7 +373,7 @@ The free sandbox allows you to create resources in a subset of the Azure global 
 12. Back on the **New App Service Plan** pane, select **OK** to create the new plan.
 13. Finally, select **Create** to start the deployment of your new site.
 
-     Note
+    Note
 
     If you encounter an issue when you create the resources, verify you've selected the **F1** pricing tier in the new App Service plan. Using the F1 pricing tier is a requirement of the sandbox system when you create this WordPress site.
 

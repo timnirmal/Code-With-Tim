@@ -1,7 +1,5 @@
 # Explore Azure networking services
 
-
-
 ## Introduction
 
 100 XP
@@ -152,7 +150,7 @@ You'll configure the following settings for a basic virtual network:
 
   But you can use 10.0.0.0/16, with addresses that range from 10.0.0.1 to 10.0.255.254, and 10.1.0.0/16, with addresses that range from 10.1.0.1 to 10.1.255.254. You can assign these address spaces to your virtual networks because there's no address overlap.
 
-   Note
+  Note
 
   You can add address spaces after you create the virtual network.
 
@@ -172,7 +170,7 @@ You'll configure the following settings for a basic virtual network:
 
   Within each virtual network address range, you can create one or more subnets that partition the virtual network's address space. Routing between subnets will then depend on the default traffic routes. You also can define custom routes. Alternatively, you can define one subnet that encompasses all the virtual networks' address ranges.
 
-   Note
+  Note
 
   Subnet names must begin with a letter or number and end with a letter, number, or underscore. They may contain only letters, numbers, underscores, periods, or hyphens.
 
@@ -284,7 +282,7 @@ The capabilities of your VPN gateway are determined by the SKU or size that you 
 | VpnGw2/Az | Maximum: 30 | 1 Gbps | Supported |
 | VpnGw3/Az | Maximum: 30 | 1.25 Gbps | Supported |
 
- Note
+Note
 
 A Basic VPN gateway should only be used for Dev/Test workloads. In addition, it's unsupported to migrate from Basic to the VpnGW1/2/3/Az SKUs at a later time without having to remove the gateway and redeploy.
 
@@ -429,8 +427,6 @@ With any-to-any connections, all WAN providers offer Layer 3 connectivity. For e
 
 With ExpressRoute, your data doesn't travel over the public internet, so it's not exposed to the potential risks associated with internet communications. ExpressRoute is a private connection from your on-premises infrastructure to your Azure infrastructure. Even if you have an ExpressRoute connection, DNS queries, certificate revocation list checking, and Azure Content Delivery Network requests are still sent over the public internet.
 
-
-
 ## Summary
 
 100 XP
@@ -463,6 +459,4 @@ Here are the learning paths in this series:
 * [Azure Fundamentals part 4: Describe general security and network security features](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-general-security-network-security-features/)
 * [Azure Fundamentals part 5: Describe identity, governance, privacy, and compliance features](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-identity-governance-privacy-compliance-features/)
 * [Azure Fundamentals part 6: Describe Azure cost management and service level agreements](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-azure-cost-management-service-level-agreements/)
-
-
 

@@ -2,7 +2,7 @@
 
 ## Images
 
-&lt;img&gt; tag is used. 
+&lt;img&gt; tag is used.
 
 `src` \(source\), `alt` \(altenative text\), `width` an `height` are attributes
 
@@ -30,12 +30,10 @@ Fore bigger headings use CSS,
 <h1 style="font-size:60px;"> Heading 1 </h1>
 ```
 
-### 
-
 ### Paragraph
 
 {% hint style="success" %}
-&lt;p&gt;   &lt;pre&gt;   &lt;hr&gt;   &lt;br&gt;
+&lt;p&gt; &lt;pre&gt; &lt;hr&gt; &lt;br&gt;
 {% endhint %}
 
 {% hint style="warning" %}
@@ -72,11 +70,7 @@ New lines are possible.
 
 `<br>` - Break the paragraph
 
-##  Quotation and Citation Elements
-
-
+## Quotation and Citation Elements
 
 {% page-ref page="quotation-and-citation-elements.md" %}
-
-
 

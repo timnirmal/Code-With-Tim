@@ -370,10 +370,6 @@ In the other units of this learning module, you've learned about some of the clo
 
 As you complete the various modules in the Azure Fundamentals learning paths, we'll analyze the challenges that Tailwind Traders is facing. You'll see how you can use Azure services to address each of the issues as they arise. After you've completed each of the modules, the knowledge that you gained from resolving the hypothetical challenges that the fictional Tailwind Traders company encountered should benefit you in your real-world environments.
 
-
-
-
-
 ## Summary
 
 * 1 minute

@@ -1,7 +1,5 @@
 # Explore Azure Storage services
 
-
-
 ## Introduction
 
 100 XP
@@ -16,7 +14,7 @@ Your company is now in the process of migrating its applications to the cloud, a
 
 In this module, you'll learn about the different Azure storage options and the scenarios in which each is appropriate.
 
- Note
+Note
 
 Azure storage isn't the same as Azure database services.
 
@@ -49,7 +47,7 @@ To begin using Azure Storage, you first create an Azure Storage account to store
 
 Your storage account will contain all of your Azure Storage data objects, such as blobs, files, and disks.
 
- Note
+Note
 
 Azure VMs use Azure Disk Storage to store virtual disks. However, you can't use Azure Disk Storage to store a disk outside of a virtual machine.
 
@@ -57,8 +55,7 @@ Azure VMs use Azure Disk Storage to store virtual disks. However, you can't use 
 
 A storage account provides a unique namespace for your Azure Storage data, that's accessible from anywhere in the world over HTTP or HTTPS. Data in this account is secure, highly available, durable, and massively scalable.
 
-For more information, see [Create a storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create).  
-
+For more information, see [Create a storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create).
 
 ## Disk storage fundamentals
 
@@ -129,8 +126,6 @@ Here's an example of a service SAS URI, showing the resource URI and the SAS tok
 
 [![Screenshot of components of a service SAS URI.](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-storage-fundamentals/media/sas-storage-uri.png)](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-storage-fundamentals/media/sas-storage-uri.png#lightbox)
 
-
-
 ## Understanding Blob access tiers
 
 100 XP
@@ -157,10 +152,6 @@ The following considerations apply to the different access tiers:
 The following illustration demonstrates choosing between the hot and cool access tiers on a general purpose storage account.
 
 [![Screenshot of specifying the Azure access tier.](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-storage-fundamentals/media/account-tier.png)](https://docs.microsoft.com/en-us/learn/azure-fundamentals/azure-storage-fundamentals/media/account-tier.png#lightbox)
-
-
-
-
 
 ## Summary
 

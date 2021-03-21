@@ -35,14 +35,6 @@ The basic format of html
 `<title>` - Title of the HTML page \(which shown in browser's title bar or in the page's tab\)
 
 `<body>` element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
-
-
-
- 
 {% endtab %}
 {% endtabs %}
-
-
-
-
 

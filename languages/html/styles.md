@@ -36,7 +36,3 @@ or for a elemen
 <h1 style="text-align:center;">Centered Heading</h1>
 ```
 
-
-
-
-

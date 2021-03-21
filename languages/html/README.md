@@ -1,6 +1,6 @@
 # Html
 
-{% embed url="https://www.w3schools.com/html/default.asp" %}
+{% embed url="https://www.w3schools.com/html/default.asp" caption="" %}
 
 ### What is HTML?
 
@@ -14,6 +14,4 @@
 ## Important
 
 HTMl is not a case sensitive language.
-
-
 

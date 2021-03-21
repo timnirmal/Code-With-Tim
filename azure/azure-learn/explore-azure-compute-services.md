@@ -1,7 +1,5 @@
 # Explore Azure compute services
 
-
-
 ## Introduction
 
 * 2 minutes
@@ -134,8 +132,7 @@ When you're ready to run a job, Batch does the following:
 * Requeues work.
 * Scales down the pool as work completes.
 
-There might be situations in which you need raw computing power or supercomputer-level compute power. Azure provides these capabilities.  
-
+There might be situations in which you need raw computing power or supercomputer-level compute power. Azure provides these capabilities.
 
 ## When to use Azure Container Instances or Azure Kubernetes Service
 
@@ -240,8 +237,6 @@ Use the Mobile Apps feature of App Service to quickly build a back end for iOS a
 * Execute custom back-end logic in C\# or Node.js.
 
 On the mobile app side, there's SDK support for native iOS and Android, Xamarin, and React native apps.
-
-
 
 ## When to use Azure Functions
 
@@ -389,8 +384,6 @@ Windows Virtual Desktop is available to you at no additional cost if you have an
 #### Save on compute costs <a id="save-on-compute-costs"></a>
 
 Buy one-year or three-year Azure Reserved Virtual Machine Instances to save you up to 72 percent versus pay-as-you-go pricing. You can pay for a reservation up front or monthly. Reservations provide a billing discount and don't affect the runtime state of your resources.
-
-
 
 ## Summary
 
