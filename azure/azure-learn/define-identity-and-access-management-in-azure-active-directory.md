@@ -39,5 +39,55 @@ With Microsoft's access and information protection solutions, you can deploy and
 * Manage Risk with Conditional Access Control
 * Configure Certificate Enrollment Web Service for certificate key-based renewal on a custom port
 
+## Understand the importance of identity
+
+100 XP
+
+* 3 minutes
+
+Today, analyst firms report that the average enterprise’s employees collectively use more than 300 software-as-a-service applications \(and some estimates are much higher\). That number is rapidly expanding. Between the hyper-growth of these apps, the rate at which they change and the business demand to harness new cloud capabilities for business transformation, it’s challenging to keep up. Relying on an on-premises identity solution as the control point makes connecting to all these cloud applications a nearly impossible task. If you include all the user devices, guest accounts, and connected objects, you have a management and security nightmare.
+
+![300 percent increase in identity attacks](https://docs.microsoft.com/en-us/learn/m365/m365-identity-overview/media/increase-identity-attacks.png)
+
+With cloud-based identity as the control point, you can help users be more productive by providing access to apps and devices that are on-premises or in the cloud from virtually anywhere and do so with incredible agility. Whether you’re just getting started on your cloud journey or want to accelerate your identity modernization, Azure AD can help you connect all your applications to achieve your business productivity and security goals.
+
+![Consistent single-sign-on to legacy apps](https://docs.microsoft.com/en-us/learn/m365/m365-identity-overview/media/consistent-sso-legacy-apps.png)
+
+## Understand how identity is core to security
+
+100 XP
+
+* 3 minutes
+
+![Identity is the new security perimeter](https://docs.microsoft.com/en-us/learn/m365/m365-identity-overview/media/identity-new-security-perimeter.png)
+
+Whether your assets are hosted on-premises or in the cloud, the security **perimeter** that separates users and data from outside threats can no longer be drawn using network lines. The perimeter is now drawn by identity components of authentication and authorization that span across all your devices, services, hosts, and networks.
+
+While the network perimeter keeps a basic security role, it can no longer guide the security defense strategy because:
+
+* Adversaries have demonstrated a consistent and ongoing ability to penetrate network perimeters using phishing attacks.
+* Organizational data, devices, and users often exist and operate outside traditional network boundaries \(whether sanctioned by IT or not\).
+* Port and protocol definitions and exceptions have failed to keep up with the complexity of services, applications, devices, and data.
+
+Organizations need to adopt different security philosophies and mindsets that are based on rigorous management of authentication and authorization, not firewall rules and exceptions.
+
+Administrators are in control and need protection. The most important identities to protect are the administrators of on-premises and cloud systems, especially identity systems like Active Directory and Azure Active Directory. These administrators have access to all the data hosted on their systems and should be protected, monitored, and restricted appropriate with their high level of responsibility.
+
+
+
+## Summary
+
+100 XP
+
+* 1 minute
+
+In this module, you learned about identity and access management in Microsoft 365 and why identity is a core component of your organization’s security posture.
+
+Now that you have completed this module, you should be able to:
+
+* Define the latest identity technologies.
+* Understand the value of securing your identity.
+* Explain how identity is core to security.
+
 
 

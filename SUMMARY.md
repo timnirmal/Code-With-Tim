@@ -50,4 +50,5 @@
   * [Create a classification model with Azure Machine Learning designer](azure/azure-learn/create-a-classification-model-with-azure-machine-learning-designer.md)
   * [Untitled](azure/azure-learn/untitled-1.md)
   * [Define identity and access management in Azure Active Directory](azure/azure-learn/define-identity-and-access-management-in-azure-active-directory.md)
+  * [Simplify access and identity provisioning with Azure Active Directory](azure/azure-learn/simplify-access-and-identity-provisioning-with-azure-active-directory.md)
 
