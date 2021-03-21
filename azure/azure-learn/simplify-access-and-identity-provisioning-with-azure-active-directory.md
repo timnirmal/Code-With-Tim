@@ -1,7 +1,5 @@
 # Simplify access and identity provisioning with Azure Active Directory
 
-
-
 ## Introduction to identity provisioning
 
 100 XP
