@@ -14,3 +14,11 @@ Using Azure Spatial Anchors for Mobile Mixed Reality \| INT181A - [https://www.y
 
 
 
+## Download Later:
+
+{% embed url="https://www.microsoft.com/videoplayer/embed/RE4ChU3" %}
+
+{% embed url="https://mslearn.cloudguides.com/guides/Enable%20B2B%20Collaboration%20in%20Azure%20AD" %}
+
+
+
