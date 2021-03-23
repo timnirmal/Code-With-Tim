@@ -56,4 +56,5 @@
   * [Enable identity protection in Azure Active Directory](azure/azure-learn/enable-identity-protection-in-azure-active-directory.md)
   * [Embrace Zero Trust with Azure Active Directory](azure/azure-learn/embrace-zero-trust-with-azure-active-directory.md)
   * [Choose the best Azure service to automate your business processes](azure/azure-learn/choose-the-best-azure-service-to-automate-your-business-processes.md)
+  * [Create serverless logic with Azure Functions](azure/azure-learn/create-serverless-logic-with-azure-functions.md)
 
