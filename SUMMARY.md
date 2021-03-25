@@ -58,4 +58,5 @@
   * [Embrace Zero Trust with Azure Active Directory](azure/azure-learn/embrace-zero-trust-with-azure-active-directory.md)
   * [Choose the best Azure service to automate your business processes](azure/azure-learn/choose-the-best-azure-service-to-automate-your-business-processes.md)
   * [Create serverless logic with Azure Functions](azure/azure-learn/create-serverless-logic-with-azure-functions.md)
+  * [Execute an Azure Function with triggers](azure/azure-learn/execute-an-azure-function-with-triggers.md)
 
