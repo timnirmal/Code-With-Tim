@@ -59,4 +59,7 @@
   * [Choose the best Azure service to automate your business processes](azure/azure-learn/choose-the-best-azure-service-to-automate-your-business-processes.md)
   * [Create serverless logic with Azure Functions](azure/azure-learn/create-serverless-logic-with-azure-functions.md)
   * [Execute an Azure Function with triggers](azure/azure-learn/execute-an-azure-function-with-triggers.md)
+  * [Untitled](azure/azure-learn/untitled-3.md)
+  * [Untitled](azure/azure-learn/untitled-4.md)
+  * [Introduction to Azure virtual machines](azure/azure-learn/introduction-to-azure-virtual-machines.md)
 
